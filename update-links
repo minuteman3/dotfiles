@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+echo "Linking vimfiles"
+ln -s ~/dotfiles/vimfiles ~/.vim
 for i in `ls ~/dotfiles/dotfiles|xargs`; do
     if [[ $i != $1 ]]; then
         echo "Linking $i..."
