@@ -1,4 +1,5 @@
 #!/bin/sh
 
-~/dotfiles/update-links
 git submodule update --init --recursive
+~/dotfiles/update-submodules
+~/dotfiles/update-links
