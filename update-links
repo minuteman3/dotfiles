@@ -1,11 +1,15 @@
 #!/usr/bin/env zsh
 
 echo "Linking vimfiles"
-ln -s ~/dotfiles/vimfiles ~/.vim
+if [ ! -d ~/.vim ]; then
+    ln -s ~/dotfiles/vimfiles ~/.vim
+else
+    echo "Failed. ~/.vim already exists!"
+fi
 for i in `ls ~/dotfiles/dotfiles|xargs`; do
     if [[ $i != $1 ]]; then
         echo "Linking $i..."
         ln -s ~/dotfiles/dotfiles/$i ~/.$i
     fi
 done
-echo 'done!'
+echo 'Done!'
