@@ -1,8 +1,4 @@
 #!/bin/sh
 
 ~/dotfiles/update-links
-cd ~/dotfiles/vimfiles
-~/dotfiles/vimfiles/install
-cd ~/dotfiles
-git submodule init
-git submodule update
+git submodule update --init --recursive
