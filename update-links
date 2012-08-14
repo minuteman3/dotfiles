@@ -1,9 +1,9 @@
 #!/usr/bin/env zsh
 
-for i in `ls dotfiles|xargs`; do
-    if [[ $i != $1 ]]; then 
+for i in `ls ~/dotfiles/dotfiles|xargs`; do
+    if [[ $i != $1 ]]; then
         echo "Linking $i..."
-        ln -s ~/dotfiles/$i ~/.$i
+        ln -s ~/dotfiles/dotfiles/$i ~/.$i
     fi
 done
 echo 'done!'
