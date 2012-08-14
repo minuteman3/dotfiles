@@ -4,7 +4,11 @@ echo "Linking vimfiles"
 if [ ! -d ~/.vim ]; then
     ln -s ~/dotfiles/vimfiles ~/.vim
 else
-    echo "Failed. ~/.vim already exists!"
+    if [ -L ~/.vim ]; then
+        echo "Failed. Symlink at ~/.vim already exists!"
+    else
+        echo "Failed. Existing directory at ~/.vim, please remove before continuing"
+    fi
 fi
 for i in `ls ~/dotfiles/dotfiles|xargs`; do
     if [[ $i != $1 ]]; then
