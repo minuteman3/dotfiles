@@ -1,6 +1,6 @@
 source ${HOME}/.oh-my-zsh-config
 
-export PATH=/usr/bin:/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:~/.git-achievements
+export PATH=/usr/bin:/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:~/dotfiles/git-achievements
 export PYTHONPATH=/usr/local/bin:${PYTHONPATH}
 export EDITOR=/usr/local/Cellar/macvim/7.3-64/MacVim.app/Contents/MacOS/Vim
 
