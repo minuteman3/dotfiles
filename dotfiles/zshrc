@@ -35,9 +35,5 @@ zstyle ':completion:*' group-name ''
 zstyle ':completion:*' menu yes select
 
 setopt extendedglob
-export GB_DEV_DIR=${HOME}/fieldaware/dev
-export GB_BACKEND_DIR=${GB_DEV_DIR}/backend
-export GB_WEBAPP_DIR=${GB_BACKEND_DIR}/www/webapp
-export GB_ADMIN_DIR=${GB_BACKEND_DIR}/www/admin
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
