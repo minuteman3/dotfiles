@@ -1,22 +1,4 @@
-source ${HOME}/.oh-my-zsh-config
-
-export PATH=/usr/bin:/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:~/dotfiles/git-achievements
-export PYTHONPATH=/usr/local/bin:${PYTHONPATH}
-export EDITOR=/usr/local/Cellar/macvim/7.3-64/MacVim.app/Contents/MacOS/Vim
-
-# Git achievements! \o/
-
-alias git="git-achievements"
-
-# Virtualenv stuff (for Python)
-
-export WORKON_HOME=~/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
-export PIP_VIRTUALENV_BASE=$WORKON_HOME
-export PIP_RESPECT_VIRTUALENV=true
-
-# zsh Powerline Stuff
-POWERLINE_FULL_CURRENT_PATH="true"
+fpath=(~/.zsh/completion $fpath)
 
 # zsh Completion scripts
 zstyle ':completion:*' completer _oldlist _expand _complete _ignored _correct _approximate
@@ -31,9 +13,30 @@ zstyle ':completion:*' format "$green%B---- %d ----%b"
 zstyle ':completion:*:descriptions'    format $'%{\e[0;31m%}searching for %B%d%b%{\e[0m%}'
 zstyle ':completion:*:messages' format '%B%U%d%u%b'
 zstyle ':completion:*:warnings' format "%B$red%}no match for $white%d%b"
-zstyle ':completion:*' group-name '' 
+zstyle ':completion:*' group-name ''
 zstyle ':completion:*' menu yes select
+zstyle ':completion:*:*:git:*' script ~/dotfiles/oh-my-zsh/plugins/gitfast/git-completion.bash
+
+source ${HOME}/.oh-my-zsh-config
+
+export PATH=/usr/bin:/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:~/dotfiles/git-achievements:~/.cabal/bin:~/.xmonad/bin
+export PYTHONPATH=/usr/local/bin:${PYTHONPATH}
+
+export GIT_EDITOR=/usr/bin/vim
+
+export EDITOR=/usr/bin/vim
+# Git achievements! \o/
+
+alias git="git-achievements"
+# zsh Powerline Stuff
+POWERLINE_FULL_CURRENT_PATH="true"
 
 setopt extendedglob
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$HOME/.local-installs/bin:$HOME/.cabal/bin:$PATH:$HOME/.rvm/bin:/home/miles/.gem/ruby/2.0.0/bin # Add RVM to PATH for scripting
+
+# added by travis gem
+[ -f /home/miles/.travis/travis.sh ] && source /home/miles/.travis/travis.sh
+
+# use nvm
+[ -f /home/miles/.nvm/nvm.sh ] && source /home/miles/.nvm/nvm.sh
